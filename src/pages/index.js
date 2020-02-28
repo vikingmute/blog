@@ -11,7 +11,16 @@ class BlogIndex extends React.Component {
     const { data } = this.props
     const siteTitle = data.site.siteMetadata.title
     const posts = data.allMarkdownRemark.edges
-
+    const headerStyle = {
+      display: 'flex',
+      alignItems: 'flex-end',
+      marginBottom: rhythm(1 / 4),
+    }
+    const dateStyle = {
+      color: '#888',
+      marginBottom: rhythm(1 / 4),
+      marginLeft: rhythm(1 / 4),
+    }
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO title="All posts" />
@@ -20,7 +29,7 @@ class BlogIndex extends React.Component {
           const title = node.frontmatter.title || node.fields.slug
           return (
             <article key={node.fields.slug}>
-              <header>
+              <header style={headerStyle}>
                 <h3
                   style={{
                     marginBottom: rhythm(1 / 4),
@@ -30,12 +39,13 @@ class BlogIndex extends React.Component {
                     {title}
                   </Link>
                 </h3>
-                <small>{node.frontmatter.date}</small>
+                <small style={dateStyle}>{node.frontmatter.date}</small>
               </header>
               <section>
                 <p
+                  style={{lineHeight: 1.8 }}
                   dangerouslySetInnerHTML={{
-                    __html: node.frontmatter.description || node.excerpt,
+                    __html: node.frontmatter.excerpt,
                   }}
                 />
               </section>
@@ -64,9 +74,9 @@ export const pageQuery = graphql`
             slug
           }
           frontmatter {
-            date(formatString: "MMMM DD, YYYY")
+            date(formatString: "YYYY-MM-DD")
             title
-            description
+            excerpt
           }
         }
       }

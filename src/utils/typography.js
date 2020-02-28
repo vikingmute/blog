@@ -1,15 +1,28 @@
 import Typography from "typography"
 import Wordpress2016 from "typography-theme-wordpress-2016"
-
+Wordpress2016.headerFontFamily = ['"Helvetica Neue","Helvetica",Aria,PingFang SC,Lantinghei SC,Microsoft Yahei,Hiragino Sans GB,Microsoft Sans Serif,WenQuanYi Micro Hei,sans-serif;']
 Wordpress2016.overrideThemeStyles = () => {
   return {
-    "a.gatsby-resp-image-link": {
+    "body": {
+      fontFamily: '"Helvetica Neue","Helvetica",Aria,PingFang SC,Lantinghei SC,Microsoft Yahei,Hiragino Sans GB,Microsoft Sans Serif,WenQuanYi Micro Hei,sans-serif;',
+      background: '#fafafa',
+      color: 'hsla(0,0%,0%,0.86)',
+      fontSize: '16px',
+      lineHeight: '1.42',
+    },
+    "a": {
+      color: '#6166DC',
       boxShadow: `none`,
+    },
+    "a:hover": {
+      textDecoration: 'underline',
     },
   }
 }
 
 delete Wordpress2016.googleFonts
+//delete Wordpress2016.headerFontFamily
+delete Wordpress2016.bodyFontFamily
 
 const typography = new Typography(Wordpress2016)
 

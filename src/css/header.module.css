@@ -1,0 +1,26 @@
+.header {
+  width: 100%;
+  padding: 0 2rem;
+  font-weight: 700;
+  z-index: 1000;
+  display: flex;
+  height: 80px;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05);
+}
+.header h1 a:hover{
+  text-decoration: none;
+}
+.list {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin-bottom: 0;
+}
+.list li {
+  margin-left: 2rem;
+  margin-bottom: 0;
+}
+

@@ -1,24 +1,31 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 
-import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm, scale } from "../utils/typography"
+import { DiscussionEmbed } from "disqus-react"
 
 class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.markdownRemark
     const siteTitle = this.props.data.site.siteMetadata.title
     const { previous, next } = this.props.pageContext
+    const disqusConfig = {
+      shortname: 'vikingz',
+      config: { identifier: post.frontmatter.slug, title: post.frontmatter.title },
+    }
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO
           title={post.frontmatter.title}
-          description={post.frontmatter.description || post.excerpt}
+          description={post.frontmatter.excerpt}
         />
-        <article>
+        <article style={{
+            fontSize: '1.25rem',
+            lineHeight: 2,
+        }}>
           <header>
             <h1
               style={{
@@ -44,11 +51,10 @@ class BlogPostTemplate extends React.Component {
               marginBottom: rhythm(1),
             }}
           />
-          <footer>
-            <Bio />
-          </footer>
         </article>
-
+        <div style={{maxWidth: '680px', margin: '2rem auto'}}>
+          <DiscussionEmbed {...disqusConfig} />
+        </div>
         <nav>
           <ul
             style={{
@@ -94,9 +100,10 @@ export const pageQuery = graphql`
       excerpt(pruneLength: 160)
       html
       frontmatter {
+        slug
         title
         date(formatString: "MMMM DD, YYYY")
-        description
+        excerpt
       }
     }
   }

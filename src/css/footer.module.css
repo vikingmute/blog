@@ -1,0 +1,25 @@
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid #efefef;
+  padding: 1.5rem 0;
+  margin-top: 3rem;
+}
+.footer ul {
+  list-style: none;
+}
+.cols {
+  display: flex;
+}
+
+.cols ul:last-child {
+  margin-left: 2rem;
+}
+
+.gzh {
+  position: absolute;
+  top: -160px;
+  left: 0;
+  z-index: 10;
+}
