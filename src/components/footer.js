@@ -8,6 +8,10 @@ const Footer = () => {
     setShow(!show)
   }
   const showText = show ? '点击隐藏' : '点击显示'
+  const picStyles = {
+    width: '160px',
+    display: show ? 'block' : 'none'
+  }
   return (
     <footer className={styles.footer}>
       <div>
@@ -19,7 +23,7 @@ const Footer = () => {
         <p>我除了写文章，还拍关于独立开发者的视频，欢迎关注</p>
         <div className={styles.cols}>
           <ul style={{ position: 'relative'}}>
-            { show && <img src={gzh} width="160px" className={styles.gzh}/>}
+            <img src={gzh} style={picStyles} className={styles.gzh}/>
             <li><a href="#" target="_blank" onClick={handleClick}>微信公众号，{showText}</a></li>
             <li><a href="https://www.zhihu.com/people/vikingmute" target="_blank">知乎专栏：程序员的乌托邦</a></li>
             <li><a href="https://space.bilibili.com/480241067" target="_blank">B站：独立开发者 Viking</a></li>

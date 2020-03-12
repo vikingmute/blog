@@ -2,7 +2,7 @@
 
 echo "Running gatsby to bulid codes"
 
-rm -rf .cache && gatsby build
+rm -rf .cache && rm -rf build && gatsby build
 
 echo "pack all the files into gzip tar file"
 
