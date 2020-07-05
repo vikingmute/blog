@@ -21,15 +21,16 @@ const AboutPage = (props) =>  {
       <SEO title="About me 关于我" />
        <div style={{ marginTop: "100px", fontSize: '1.25rem', lineHeight: 2,}}>
           <h2 style={centerStyle}>关于我</h2>
-          <p>我叫张轩，ID 是 Viking，我是一名前端开发工程师，同时也是一名独立开发者，目前生活在上海。我水平一般，但是在教学上有一点天赋，我在 2016 年和哥们出过一本书，从18年下半年到现在，在慕课网出品了四套课程。</p>
+          <p>我叫张轩，ID 是 Viking，我是一名前端开发工程师，同时也是一名独立开发者，目前生活在上海。我水平一般，但是在教学上有一点天赋，我在 2016 年和哥们出过一本书，从18年下半年到现在，在慕课网出品了五套课程。</p>
           <h3 style={centerStyle}>我出品的课程 - 收费</h3>
           <ul>
+            <li><a href="https://coding.imooc.com/class/428.html" target="_blank">React+TypeScript高仿AntDesign开发企业级UI组件库</a></li>
             <li><a href="https://coding.imooc.com/class/384.html" target="_blank">Electron+React+七牛云 实战跨平台桌面应用</a></li>
-            <li><a href="https://coding.imooc.com/class/351.html" target="_blank">Electron开发仿网易云音乐播放器</a></li>
             <li><a href="https://coding.imooc.com/class/302.html" target="_blank">React16组件化+测试+全流程实战“在线账本”项目</a></li>
           </ul>
           <h3 style={centerStyle}>我出品的课程 - 免费</h3>
           <ul>
+            <li><a href="https://www.imooc.com/learn/1198" target="_blank">Electron开发仿网易云音乐播放器</a></li>
             <li><a href="https://www.imooc.com/learn/1045" target="_blank">基于实例的 React16 傻瓜课程</a></li>
           </ul>
           <h3 style={centerStyle}>Opensale 计划</h3>
