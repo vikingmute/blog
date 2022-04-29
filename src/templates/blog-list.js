@@ -1,17 +1,20 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 import styles from '../css/utils.module.css'
-
-import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm } from "../utils/typography"
 
-class BlogIndex extends React.Component {
+class BlogListTemplate extends React.Component {
   render() {
     const { data } = this.props
     const siteTitle = data.site.siteMetadata.title
     const posts = data.allMarkdownRemark.edges
+    const { currentPage, numPages } = this.props.pageContext
+    const isFirst = currentPage === 1
+    const isLast = currentPage === numPages
+    const prevPage = currentPage - 1 === 1 ? "/posts" : "posts/" + (currentPage - 1).toString()
+    const nextPage = "posts/" + (currentPage + 1).toString()
     const headerStyle = {
       display: 'flex',
       alignItems: 'flex-end',
@@ -24,8 +27,7 @@ class BlogIndex extends React.Component {
     }
     return (
       <Layout location={this.props.location} title={siteTitle}>
-        <SEO title="欢迎来到首页" />
-        <Bio />
+        <SEO title="博客文章列表" />
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
           return (
@@ -54,19 +56,26 @@ class BlogIndex extends React.Component {
           )
         })}
         <div className={styles.pagination}>
-            <Link to="/posts/2" rel="next">
-              查看更多文章 →
+          {!isFirst && (
+            <Link to={prevPage} rel="prev">
+              ← 上一页
             </Link>
+          )}
+          {!isLast && (
+            <Link to={nextPage} rel="next">
+              下一页 →
+            </Link>
+          )}
         </div>
       </Layout>
     )
   }
 }
 
-export default BlogIndex
+export default BlogListTemplate
 
 export const pageQuery = graphql`
-  query {
+  query blogListQuery($skip: Int!, $limit: Int!) {
     site {
       siteMetadata {
         title
@@ -74,8 +83,8 @@ export const pageQuery = graphql`
     }
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
-      limit: 5
-      skip: 0
+      limit: $limit
+      skip: $skip
       ) {
       edges {
         node {

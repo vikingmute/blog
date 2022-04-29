@@ -21,9 +21,11 @@ const AboutPage = (props) =>  {
       <SEO title="About me 关于我" />
        <div style={{ marginTop: "100px", fontSize: '1.25rem', lineHeight: 2,}}>
           <h2 style={centerStyle}>关于我</h2>
-          <p>我叫张轩，ID 是 Viking，我是一名前端开发工程师，同时也是一名独立开发者，目前生活在上海。我水平一般，但是在教学上有一点天赋，我在 2016 年和哥们出过一本书，从18年下半年到现在，在慕课网出品了五套课程。</p>
+          <p>我叫张轩，ID 是 Viking，我是一名前端开发工程师，同时也是一名独立开发者，目前生活在上海。我水平一般，但是在教学上有一点天赋，我在 2016 年和哥们出过一本书，从18年下半年到现在，在慕课网出品了 <b>7</b> 套课程，它们是我目前的主要收入来源。</p>
           <h3 style={centerStyle}>我出品的课程 - 收费</h3>
           <ul>
+            <li><a href="https://class.imooc.com/sale/fearchitect" target="_blank" rel="noopener noreferrer">Web前端架构师2022版</a></li>
+            <li><a href="https://coding.imooc.com/class/449.html" target="_blank" rel="noopener noreferrer">2022全面升级！Vue3 + TS 仿知乎专栏企业级项目</a></li>
             <li><a href="https://coding.imooc.com/class/428.html" target="_blank" rel="noopener noreferrer">React+TypeScript高仿AntDesign开发企业级UI组件库</a></li>
             <li><a href="https://coding.imooc.com/class/384.html" target="_blank" rel="noopener noreferrer">Electron+React+七牛云 实战跨平台桌面应用</a></li>
             <li><a href="https://coding.imooc.com/class/302.html" target="_blank" rel="noopener noreferrer">React16组件化+测试+全流程实战“在线账本”项目</a></li>
@@ -35,8 +37,9 @@ const AboutPage = (props) =>  {
           </ul>
           <h3 style={centerStyle}>Opensale 计划</h3>
           <p>
-            目前是自由职业的我，开启了一项 Opensale 计划，我所有的课程销售大体金额现在都以图表的方式公布在<a href="/opensale">这里</a>。
-            意在帮助自己或者任何对自由职业感兴趣的人，追踪每个月的收入。
+            <s> 目前是自由职业的我，开启了一项 Opensale 计划，我所有的课程销售大体金额现在都以图表的方式公布在<a href="/opensale">这里</a>。
+            意在帮助自己或者任何对自由职业感兴趣的人，追踪每个月的收入。</s>
+            计划暂停，因为现在课比较多，数据会比较混乱，我在未来会公布更多关于独立开发者的计划。
           </p>
           <hr/>
           <h3 style={centerStyle}>我和 <a href="https://nighca.me/" target="_blank" rel="noopener noreferrer"> 杨寒星</a>一起出版的书</h3>
