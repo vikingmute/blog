@@ -94,6 +94,7 @@ module.exports = {
         // Disable the loading spinner.
         showSpinner: true,
       },
-    }  
+    },
+    'gatsby-plugin-dark-mode'
   ],
 }

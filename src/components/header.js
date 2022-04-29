@@ -1,5 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
+import { ThemeToggler } from 'gatsby-plugin-dark-mode'
 import styles from '../css/header.module.css'
 const Logo = () => {
   return (
@@ -10,13 +11,26 @@ const Logo = () => {
   );
 }
 const Header = () => (
-  <nav className={styles.header}>
+  <nav className={styles.header} style={{backgroundColor: 'var(--headerBg)'}}>
     <Link to="/" title="viking zhang"><Logo /></Link>
-    <ul className={styles.list}>
+    <ul className={styles.list} >
       <li><Link to="/" >首页</Link></li> 
       <li><Link to="/about">关于我</Link></li> 
       <li><Link to="/opensale">公开销售计划</Link></li>
       <li><Link to="/posts">所有文章</Link></li>
+      <ThemeToggler>
+        {({ theme, toggleTheme }) => (
+          <label>
+            <input
+              className="theme-toggler"
+              type="checkbox"
+              onChange={e => toggleTheme(e.target.checked ? 'dark' : 'light')}
+              checked={theme === 'dark'}
+            />{' '}
+            暗黑模式
+          </label>
+        )}
+      </ThemeToggler>
     </ul>
   </nav>
 )

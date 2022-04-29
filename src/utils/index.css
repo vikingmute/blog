@@ -1,0 +1,48 @@
+body {
+  --bg: #fafafa;
+  --textNormal:hsla(0,0%,0%,0.86);
+  --textTitle: hsla(0,0%,0%,0.86);
+  --textLink: #6166DC;
+  --hr: hsla(0, 0%, 0%, 0.2);
+  --headerBg: #ffffff;
+  background-color: var(--bg);
+}
+
+body.dark {
+  -webkit-font-smoothing: antialiased;
+  --bg: #282c35;
+  --textNormal: rgba(255, 255, 255, 0.88);
+  --textTitle: white;
+  --textLink: #9b9ffd;
+  --headerBg: #1d2025;
+  --hr: hsla(0, 0%, 100%, 0.2);
+}
+body.dark nav svg {
+  filter: invert(1)
+}
+.theme-toggler {
+  cursor: pointer;
+  width: 2em;
+  margin-left: 2rem;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3E%3Ccircle r='3' fill='rgba(0, 0, 0, 0.25)'/%3E%3C/svg%3E");
+  background-position: left center;
+  border-radius: 2em;
+  transition: background-position .15s ease-in-out;
+  height: 1em;
+  margin-top: 0.25em;
+  vertical-align: top;
+  background-color: #fff;
+  background-repeat: no-repeat;
+  background-size: contain;
+  border: 1px solid rgba(0,0,0,.25);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -webkit-print-color-adjust: exact;
+}
+.theme-toggler:checked {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3E%3Ccircle r='3' fill='rgba(255, 255, 255, 1)'/%3E%3C/svg%3E");
+  background-position: right center;
+  background-color:var(--textLink);
+  border-color: var(--textLink);
+}
