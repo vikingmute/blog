@@ -16,8 +16,8 @@ const Header = () => (
     <ul className={styles.list} >
       <li><Link to="/" >首页</Link></li> 
       <li><Link to="/about">关于我</Link></li> 
-      <li><Link to="/opensale">公开销售计划</Link></li>
       <li><Link to="/posts">所有文章</Link></li>
+      <li><Link to="/opensale">公开销售计划</Link></li>
       <ThemeToggler>
         {({ theme, toggleTheme }) => (
           <label>
