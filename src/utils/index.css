@@ -20,6 +20,10 @@ body.dark {
 body.dark nav svg {
   filter: invert(1)
 }
+body.dark blockquote {
+  color: var(--textNormal);
+  border-left-color: var(--textTitle);
+}
 .theme-toggler {
   cursor: pointer;
   width: 2em;
