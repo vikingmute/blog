@@ -10,8 +10,7 @@ excerpt: 这篇文章是2019年带给我震动最大的故事，科技创业公�
 
 **原文链接：**
 
-[https://marker.medium.com/reflecting-on-my-failure-to-build-a-billion-dollar-company-b0c31d7db0e7
-​marker.medium.com/](reflecting-on-my-failure-to-build-a-billion-dollar-company-b0c31d7db0e7)
+[https://marker.medium.com/reflecting-on-my-failure-to-build-a-billion-dollar-company-b0c31d7db0e7](reflecting-on-my-failure-to-build-a-billion-dollar-company)
 
 
 2011年，我从Pinterest离职，我是当初第二个加入 Pinterest的元老级员工，我为了开始自己的人生事业，连股权都没来得及套现就匆忙离开了。
