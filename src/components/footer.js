@@ -31,13 +31,13 @@ const Footer = () => {
           <ul style={{ position: 'relative'}}>
             <img src={gzh} style={picStyles} className={styles.gzh} alt="程序员乌托邦 微信公众号"/>
             <li><button onClick={handleClick}>微信公众号，{showText}</button></li>
-            <li><a href="https://www.zhihu.com/people/vikingmute" target="_blank" rel="noopener noreferrer">知乎专栏：程序员的乌托邦</a></li>
+            <li><a href="https://www.youtube.com/channel/UCm5Z1WsCPhxl_NznRK0tvEw" target="_blank" rel="noopener noreferrer">Youtube： 程序员的乌托邦</a></li>
             <li><a href="https://space.bilibili.com/480241067" target="_blank" rel="noopener noreferrer">B站：独立开发者 Viking</a></li>
           </ul>
           <ul>
-          <li><a href="https://www.youtube.com/channel/UCm5Z1WsCPhxl_NznRK0tvEw" target="_blank" rel="noopener noreferrer">Youtube： 程序员的乌托邦</a></li>
+          <li><a href="https://twitter.com/vikingmute" target="_blank" rel="noopener noreferrer">Twitter：@vikingmute</a></li>
+          <li><a href="https://www.zhihu.com/people/vikingmute" target="_blank" rel="noopener noreferrer">知乎专栏：程序员的乌托邦</a></li>
           <li><a href="https://www.github.com/vikingmute/" target="_blank" rel="noopener noreferrer">Github：vikingmute</a></li>
-          <li><a href="https://twitter.com/vikingmute" target="_blank" rel="noopener noreferrer">Twitter：Viking</a></li>
           </ul>
         </div>
       </div>
