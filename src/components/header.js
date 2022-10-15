@@ -18,6 +18,7 @@ const Header = () => (
       <li><Link to="/about">关于我</Link></li> 
       <li><Link to="/posts">所有文章</Link></li>
       <li><Link to="/opensale">公开销售计划</Link></li>
+      <li><a href="/rss.xml" target="_blank" rel="noopener noreferrer">RSS 订阅</a></li>
       <ThemeToggler>
         {({ theme, toggleTheme }) => (
           <label>

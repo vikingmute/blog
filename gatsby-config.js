@@ -1,3 +1,5 @@
+
+
 module.exports = {
   siteMetadata: {
     title: `Viking Zhang, 一个前端开发工程师以及独立开发者的故事`,
@@ -10,6 +12,76 @@ module.exports = {
     },
   },
   plugins: [
+    {
+      resolve: 'gatsby-plugin-feed',
+      options: {
+        query: `
+          {
+            site {
+              siteMetadata {
+                title
+                description
+                siteUrl
+                site_url: siteUrl
+              }
+            }
+          }
+        `,
+        feeds: [
+          {
+            title: "Viking Zhang, 一个前端开发工程师以及独立开发者的故事",
+            output: "/rss.xml",
+            serialize: ({ query: { site, allMarkdownRemark } }) => {
+              function substrWithTags(str, len) {
+                let result = str.substr(0, len),
+                    lastOpening = result.lastIndexOf('<'),
+                    lastClosing = result.lastIndexOf('>');
+                console.log('opening', lastOpening, lastClosing)
+                if (lastOpening !== -1 && (lastClosing === -1 || lastClosing < lastOpening)) {
+                    result += str.substring(len, str.indexOf('>', len) + 1);
+                }
+                return result;
+              }
+              return allMarkdownRemark.nodes.map(node => {
+                const url = `${site.siteMetadata.siteUrl}${node.fields.slug}`
+                const sliceHtml = 
+                  substrWithTags(node.html, 500) + 
+                  `<div style="margin-top: 50px; font-style: italic;"> <strong><a href="${url}">继续阅读</a>.</strong> </div> <br /> <br />`
+                const obj = Object.assign({}, node.frontmatter, {
+                  description: node.frontmatter.excerpt,
+                  date: node.frontmatter.date,
+                  url,
+                  guid: `${site.siteMetadata.siteUrl}${node.fields.slug}`,
+                  custom_elements: [
+                    { "content:encoded": sliceHtml },
+                  ],
+                })
+                return obj
+              })
+            },
+            query: `
+            {
+              allMarkdownRemark(sort: {fields: frontmatter___date, order: DESC}) {
+                nodes {
+                  html
+                  frontmatter {
+                    title
+                    date
+                    excerpt
+                  }
+                  fields {
+                    slug
+                  }
+                }
+              }
+            }
+            `
+          }
+        ]
+    
+      }
+    },
+
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -48,7 +120,6 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    `gatsby-plugin-feed`,
     `gatsby-plugin-remove-serviceworker`,
     // {
     //   resolve: `gatsby-plugin-manifest`,
