@@ -4,6 +4,7 @@ slug: git-pro
 author: Viking Zhang
 date: 2022-04-29
 excerpt: Git 是程序员日常使用的最多的工具之一，但是会经常遇到一些比较棘手的问题比较抓狂，在这里我选取了六条比较进阶，并且非常实用的 Git 命令分享给大家，它们在日常工作中帮我大大提升了效率。希望也能帮助到大家。
+tags: ["技术教学", "工具分享"]
 ---
 
 **[在 Youtube 观看视频版本](https://www.youtube.com/watch?v=6Qn18R63M28&feature=youtu.be&ab_channel=%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E4%B9%8C%E6%89%98%E9%82%A6)**

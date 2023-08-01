@@ -4,6 +4,7 @@ slug: best-terminal-setup
 author: Viking Zhang
 date: 2022-07-30
 excerpt: 非常多程序员在对某些和我们朝夕相处的工具都在追求高颜值：比如终端，编辑器，键盘等等，在这里，我想单独拿出终端来说说，它是除了编辑器以外最常用的工具，也是体现程序员个性的一个重要展示途径，让我们一起来一次终端终极改造计划，让你的终端颜值爆表，效率提高十倍。
+tags: ["技术教学"]
 ---
 **[在 Youtube 观看视频版本](https://www.youtube.com/watch?v=AWtc3SQQPpI&ab_channel=%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E4%B9%8C%E6%89%98%E9%82%A6)**
 

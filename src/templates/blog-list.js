@@ -3,6 +3,7 @@ import { Link, graphql } from "gatsby"
 import styles from '../css/utils.module.css'
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import TagList from "../components/tagList"
 import { rhythm } from "../utils/typography"
 
 class BlogListTemplate extends React.Component {
@@ -28,6 +29,7 @@ class BlogListTemplate extends React.Component {
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO title="博客文章列表" />
+        <TagList />
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
           return (

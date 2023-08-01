@@ -5,10 +5,11 @@ exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
 
   const blogPost = path.resolve(`./src/templates/blog-post.js`)
+  const tagList = path.resolve(`./src/templates/tag-list.js`)
   const result = await graphql(
     `
       {
-        allMarkdownRemark(
+        list: allMarkdownRemark(
           sort: { fields: [frontmatter___date], order: DESC }
           limit: 1000
         ) {
@@ -22,6 +23,12 @@ exports.createPages = async ({ graphql, actions }) => {
               }
             }
           }
+        },
+        tags: allMarkdownRemark {
+          group(field: frontmatter___tags) {
+            tag: fieldValue
+            totalCount
+          }
         }
       }
     `
@@ -32,8 +39,9 @@ exports.createPages = async ({ graphql, actions }) => {
   }
 
   // Create blog posts pages.
-  const posts = result.data.allMarkdownRemark.edges
-
+  const posts = result.data.list.edges
+  const tags = result.data.tags.group
+  console.log('the tags', tags)
   posts.forEach((post, index) => {
     const previous = index === posts.length - 1 ? null : posts[index + 1].node
     const next = index === 0 ? null : posts[index - 1].node
@@ -47,6 +55,16 @@ exports.createPages = async ({ graphql, actions }) => {
         next,
       },
     })
+  })
+  tags.forEach((tag, index) => {
+    createPage({
+      path: `/tags/${tag.tag}/`,
+      component: tagList,
+      context: {
+        tag: tag.tag,
+      },
+    })
+
   })
   // create blog-list page, support pagnation
   const postsPerPage = 5

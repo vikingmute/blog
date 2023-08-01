@@ -4,6 +4,7 @@ slug: dracula-story
 author: Viking Zhang
 date: 2021-08-03
 excerpt: 这次说的是一个称之为 Dracula Pro 的编辑器主题。对于程序员来说，主题配色是一个非常重要的话题，主题（theme）使用在每天和我们打交道最多的一系列软件上，比如编辑器，终端，可谓是我们接触时间最长的几种颜色了，就是这么几个简单的颜色，程序员 zeno 通过一系列的方法，将这一系列颜色的组合在半年内狂卖出 15万 美元，让我们来看看它是怎样做的，我们又能学习到什么？
+tags: ["独立开发", "成功故事", "工具分享"]
 ---
 
 **[点击在 Youtube 查看视频版本](https://www.youtube.com/watch?v=6_oCxwTTdCo&ab_channel=%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E4%B9%8C%E6%89%98%E9%82%A6)**

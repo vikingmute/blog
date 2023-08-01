@@ -4,6 +4,7 @@ slug: how-much-i-make-as-solo-developer
 author: Viking Zhang
 date: 2019-10-05
 excerpt: 2019年7月我离开公司，开始了一项心仪已久的计划，我想尝试作为一个独立开发者，看看自己能赚多少钱。独立开发在国外其实已经很流行了，他们称自己为 indie hacker 或者 solo developer，在国内，现在也有很多独立开发者，但是相比国外，还算是小众。这是我三个月以来的总结和收入状况。
+tags: ["独立开发"]
 ---
 
 ## 前言

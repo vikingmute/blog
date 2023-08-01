@@ -1,18 +1,15 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 import styles from '../css/utils.module.css'
-
-import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import TagList from "../components/tagList"
 import { rhythm } from "../utils/typography"
 
-class BlogIndex extends React.Component {
+class TagListTemplate extends React.Component {
   render() {
     const { data } = this.props
     const siteTitle = data.site.siteMetadata.title
-    const posts = data.list.edges
+    const posts = data.allMarkdownRemark.edges
     const headerStyle = {
       display: 'flex',
       alignItems: 'flex-end',
@@ -25,9 +22,7 @@ class BlogIndex extends React.Component {
     }
     return (
       <Layout location={this.props.location} title={siteTitle}>
-        <SEO title="欢迎来到首页" />
-        <Bio />
-        <TagList />
+        <SEO title="博客文章列表" />
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
           return (
@@ -55,29 +50,23 @@ class BlogIndex extends React.Component {
             </article>
           )
         })}
-        <div className={styles.pagination}>
-            <Link to="/posts/2" rel="next">
-              查看更多文章 →
-            </Link>
-        </div>
       </Layout>
     )
   }
 }
 
-export default BlogIndex
+export default TagListTemplate
 
 export const pageQuery = graphql`
-  query {
+  query tagListQuery($tag: String) {
     site {
       siteMetadata {
         title
       }
     }
-    list: allMarkdownRemark(
+    allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
-      limit: 5
-      skip: 0
+      filter: { frontmatter: { tags: { in: [$tag] } } }
       ) {
       edges {
         node {

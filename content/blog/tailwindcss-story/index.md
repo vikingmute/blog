@@ -4,6 +4,7 @@ slug: tailwind-story
 author: Viking Zhang
 date: 2021-05-20
 excerpt: 对于一个程序员来说，开源库是我们接触也用的最多的一系列内容，开源是程序员共享的一种伟大理念，当然假如你有一个 5k star 的项目，受众人欢迎，每天 npm 下载好几十万，但是你知道怎样将它变现吗？那么今天就来分享一个从个人兴趣项目到年入几百万美元的开源库的故事。
+tags: ["独立开发", "成功故事", "工具分享"]
 ---
 
 本文改编自：[https://adamwathan.me/tailwindcss-from-side-project-byproduct-to-multi-mullion-dollar-business/](https://adamwathan.me/tailwindcss-from-side-project-byproduct-to-multi-mullion-dollar-business/)   如果感兴趣，可以阅读原文。

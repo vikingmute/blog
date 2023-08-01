@@ -4,6 +4,7 @@ slug: photopea-story
 author: Viking Zhang
 date: 2022-01-26
 excerpt: 一个独立开发的免费产品怎样怎样让他财富自由？这个产品称之为 Photopea ，这不仅仅是赚钱的故事，这是一个关于程序员坚持自己的梦想的旅程，做大众需要并且喜欢的东西，成功自然而然会来，太多人因为这个时间太长而放弃了自己的产品，但是 Photopea 的作者，一名叫 Ivan Kutskir 的乌克兰程序员坚持了 7 年。让我们来听听他的故事。
+tags: ["独立开发", "成功故事", "工具分享"]
 ---
 
 **[在 youtube 观看视频版](https://www.youtube.com/watch?v=jF5Qet80KhQ&t=197s&ab_channel=%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E4%B9%8C%E6%89%98%E9%82%A6)**
