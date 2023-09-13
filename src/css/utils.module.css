@@ -19,3 +19,26 @@
   align-items: center;
   justify-content: space-around;
 }
+.article {
+  margin: 2.5rem 0;
+}
+.header {
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 0.5rem;
+  flex-wrap: wrap;
+}
+.headerline {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 1.2rem;
+  margin-right: 20px;
+}
+.headerdate {
+  color: #888;
+}
+@media (max-width: 768px) {
+  .headerdate {
+    margin-top: .5rem;
+  }
+}

@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import { Link } from "gatsby"
 import { ThemeToggler } from 'gatsby-plugin-dark-mode'
 import styles from '../css/header.module.css'
@@ -10,16 +10,49 @@ const Logo = () => {
     </svg>
   );
 }
-const Header = () => (
-  <nav className={styles.header} style={{backgroundColor: 'var(--headerBg)'}}>
-    <Link to="/" title="viking zhang"><Logo /></Link>
-    <ul className={styles.list} >
+const Header = () => {
+  const [ toggle, setToggle ] = useState(false)
+  const updateToggle = () => {
+    setToggle(!toggle)
+  }
+  return (
+  <>
+    <nav className={styles.header} style={{backgroundColor: 'var(--headerBg)'}}>
+      <Link to="/" title="viking zhang"><Logo /></Link>
+      <div className="hamburger" onClick={updateToggle}>
+        <div className="container">
+          <span className="top"></span>
+          <span className="middle"></span>
+          <span className="bottom"></span>
+        </div>
+      </div>
+      <ul className='nav-list'>
+        <li><Link to="/" >首页</Link></li> 
+        <li><Link to="/about">关于我</Link></li> 
+        <li><Link to="/posts">所有文章</Link></li>
+        <li><a href="/rss.xml" target="_blank" rel="noopener noreferrer">RSS 订阅</a></li>
+        <ThemeToggler>
+          {({ theme, toggleTheme }) => (
+            <label>
+              <input
+                className="theme-toggler"
+                type="checkbox"
+                onChange={e => toggleTheme(e.target.checked ? 'dark' : 'light')}
+                checked={theme === 'dark'}
+              />{' '}
+              暗黑模式
+            </label>
+          )}
+        </ThemeToggler>
+      </ul>
+    </nav>
+    <div className={`mobile-holder ${toggle ? 'open' : ''}`}>
+    <ul className='mobile-list'>
       <li><Link to="/" >首页</Link></li> 
       <li><Link to="/about">关于我</Link></li> 
       <li><Link to="/posts">所有文章</Link></li>
-      <li><Link to="/opensale">公开销售计划</Link></li>
       <li><a href="/rss.xml" target="_blank" rel="noopener noreferrer">RSS 订阅</a></li>
-      <ThemeToggler>
+      <li><ThemeToggler>
         {({ theme, toggleTheme }) => (
           <label>
             <input
@@ -32,8 +65,11 @@ const Header = () => (
           </label>
         )}
       </ThemeToggler>
+      </li>
     </ul>
-  </nav>
-)
+    </div>
+  </>
+  )
+}
 
 export default Header

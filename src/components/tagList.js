@@ -32,7 +32,8 @@ const Bio = () => {
       style={{
         display: `flex`,
         marginBottom: rhythm(.5),
-        alignItems: 'center'
+        alignItems: 'center',
+        flexWrap: 'wrap'
       }}
     >
       标签列表：

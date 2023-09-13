@@ -49,3 +49,85 @@ body.dark blockquote {
   background-color:var(--textLink);
   border-color: var(--textLink);
 }
+
+.hamburger {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 48px;
+  height: 64px;
+}
+.hamburger .container {
+  position: relative;
+  width: 16px;
+  height: 14px;
+  overflow: hidden;
+}
+
+.hamburger .top, .hamburger .middle, .hamburger .bottom {
+  position: absolute;
+  width: 16px;
+  height: 2px;
+  background-color: rgb(60 60 67 / 92%);
+  transition: top .25s,background-color .5s,transform .25s;
+}
+.hamburger .top {
+  top: 0;
+  left: 0;
+  transform: translate(0);
+}
+.hamburger .middle {
+  top: 6px;
+  left: 0;
+  transform: translate(8px);
+}
+.hamburger .bottom {
+  top: 12px;
+  left: 0;
+  transform: translate(4px);
+}
+@media (min-width: 768px) {
+  .hamburger {
+    display: none;
+  }
+  .mobile-list {
+    display: none;
+  }
+  .nav-list {
+    display: flex !important;
+  }
+}
+.mobile-list {
+  list-style: none;
+  margin-left: 0;
+  background-color: #fff;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+.mobile-list li {
+  display: block;
+  border-bottom: 1px solid rgb(60 60 67 / 12%);
+  padding: 12px 0 12px 20px;
+  margin-bottom: 0;
+  line-height: 24px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: border-color .25s,color .25s;
+}
+
+.mobile-holder.open .mobile-list {
+  max-height: 414px; /* 设置下拉内容的最大高度 */
+}
+.nav-list {
+  list-style: none;
+  margin: 0;
+  align-items: center;
+  flex-wrap: wrap;
+  display: none;
+}
+.nav-list li {
+  margin-right: 2rem;
+  margin-top: .5rem;
+  margin-bottom: .5rem;
+}
