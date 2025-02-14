@@ -1,0 +1,35 @@
+option = {
+      title: {
+        text: '简单简历月收入图表',
+        textStyle: {
+            fontSize: 20, // 设置标题字体大小
+            textAlign: 'center',
+            fontWeight: 'bold'
+        }
+    },
+  xAxis: {
+    type: 'category',
+    data: ['六月', '七月', '八月', '九月', '十月', '十一月', '十二月', '一月', '二月']
+  },
+  yAxis: {
+    type: 'value',
+    min: 1500
+  },
+  series: [
+    {
+      data: [3012, 1900, 2852, 2394, 3605, 3111, 2319, 2384, 4379],
+      type: 'line',
+      label: {
+            normal: {
+                show: true,
+                position: 'top',
+                formatter: '{c} 元',
+                textStyle: {
+                  fontSize: 16
+                }
+            }
+        }
+
+    }
+  ]
+};
